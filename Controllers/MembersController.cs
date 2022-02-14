@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using RegisterFinalTest.Models;
@@ -15,9 +16,14 @@ namespace RegisterFinalTest.Controllers
 		private RegisterDbContext db = new RegisterDbContext();
 
 		// GET: Members
-		public ActionResult Index(string SearchsString)
+		public async Task<ActionResult> Index(string searchString)
 		{
-			return View(db.Members.Where(m=>m.LastName.Contains(SearchsString)).ToList());
+			if (!String.IsNullOrEmpty(searchString))
+			{
+				return View(await db.Members.Where(m => m.FistName.Contains(searchString)).ToListAsync());
+			}
+			else
+				return View(await db.Members.ToListAsync());
 		}
 
 		// GET: Members/Details/5
