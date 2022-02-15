@@ -7,13 +7,13 @@ namespace RegisterFinalTest.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class FirstTable : IMigrationMetadata
+    public sealed partial class UpDate_DB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FirstTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpDate_DB));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202141335108_FirstTable"; }
+            get { return "202202151004090_UpDate_DB"; }
         }
         
         string IMigrationMetadata.Source

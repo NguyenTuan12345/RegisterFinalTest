@@ -18,11 +18,14 @@ namespace RegisterFinalTest.Models
 		public string LastName { get; set; }
 		[DataType(DataType.EmailAddress)]
 		public string Email { get; set; }
-		[DataType(DataType.Password)]
+		[Display(Name = "Mật khẩu")]
+		//[Required]
+		[DataType("Password")]
 		public string Password { get; set; }
-		[DataType(DataType.Password)]
-		[Compare("Password")]
-		[NotMapped]
-		public string ConfirmPassword { get; set; }
+		//[Display(Name ="Nhập lại mật khẩu")]
+		//[DataType("Password")]
+		//[Compare("Password")]
+		//[NotMapped]
+		//public string ConfirmPassword { get; set; }
 	}
 }
